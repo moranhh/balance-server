@@ -89,7 +89,7 @@ static void sig_handler( int sig )
     errno = save_errno;
 }
 
-static void addsig( int sig, void( handler )(int), bool restart = true ) //设置信号处理函数
+static void addsig( int sig, void( *handler )(int), bool restart = true ) //设置信号处理函数
 {
     struct sigaction sa;
     memset( &sa, '\0', sizeof( sa ) );
